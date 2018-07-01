@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700');
+@import '_variables.scss';
+
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    height: 100%;
+    color: $font;
+    font-family: $font-stack;
+}
+
+#root .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/************************   HEADER   ************************/
+
+.hidden-header {
+    height: 0px;
+    overflow: hidden;
+    margin: 0;
+    width: 0px;
+}
+
+.header-top {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 0 auto;
+    height: 200px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $header-background;
+    background-image: url(../img/texture.png);
+    padding: 15px 30px 45px 30px;
+    img {
+        width: 135%;
+    }
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    margin-left: -28px;
+    left: 50%;
+    transform: translate(-50%, -58%);
+}
+
+.addBtn {
+    text-decoration: none;
+}
+
+.btn {
+    border: none;
+    z-index: 1;
+    border-radius: 4px; //    box-shadow: 1px 1px 2px rgba(0,0,0,.3);
+    color: white;
+    font-weight: 600;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: $header-background;
+    border: 1px solid #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    margin-bottom: 15px;
+    transition: background-color .2s ease-out;
+    .green-white img {
+        right: 25px;
+    }
+    &:hover,
+    &:focus {
+        background-color: #79CE97; //        box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+        color: white;
+    }
+    .green-white {
+        margin-right: 10px;
+        width: 25px;
+        height: 25px;
+        overflow: hidden;
+        img {
+            width: 50px;
+            position: relative;
+        }
+    }
+}
+
+.clock {
+    color: white;
+    width: 139px;
+    font-size: 1.5em;
+    font-weight: 600;
+    .fa-clock {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/************************   MAIN   ************************/
+
+main {
+    padding: 30px 15px 30px 15px;
+    text-align: center;
+    position: relative;
+    flex: 1 0 auto;
+    min-height: 200px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    a {
+        text-decoration: none;
+        margin: 10px;
+    }
+}
+
+.add-pizza {
+    margin: 0 auto;
+    color: #fff;
+    background-color: $active-red;
+    text-transform: uppercase;
+    .fa-plus {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.add-pizza:hover,
+.add-pizza:focus {
+    background-color: $light-green;
+}
+
+.pizzas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+/************************   PIZZA   ************************/
+
+.pizza {
+    max-width: 200px;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .07), 1px 2px 5px 0 rgba(0, 0, 0, .06);
+    border-radius: 2px;
+    margin: 15px;
+    background-color: $card-backgraund;
+    position: relative;
+    cursor: pointer;
+    img {
+        max-width: 100%;
+        margin: 1em 0 2em 0;
+    }
+}
+
+.pizza:hover,
+.pizza:focus {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+}
+
+.pizza-info {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    .price {
+        display: block;
+    }
+    .left-info {
+        text-align: left;
+        line-height: 1.5;
+        .date {
+            display: block;
+        }
+    }
+    .right-info {
+        text-align: right;
+        line-height: 1.5;
+    }
+}
+
+/************************   CREATE PIZZA   ************************/
+
+.create-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 940px;
+    margin: 0 auto;
+    .canvas {
+        flex: 1;
+    }
+    .collect {
+        flex: 1;
+        font-size: 18px;
+    }
+}
+
+#create {
+    img {
+        cursor: pointer;
+        padding: 10px;
+    }
+    text-align: left;
+    input[type=text] {
+        margin: 1em 0;
+    }
+    .form_create_div {
+        margin: 2em 0;
+        .form_create_div-padding {
+            padding-right: 20px;
+        }
+        .form_create_div-margin {
+            display: block;
+        }
+        .ingredient-box {
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+            width: 55px;
+            text-align: center;
+            vertical-align: middle;
+            height: 55px;
+            border: 1px solid #e3ede7;
+            border-radius: 4px;
+        }
+        .tags-box {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid #e3ede7;
+            border-radius: 4px;
+            width: inherit;
+            padding: 10px;
+            height: inherit;
+            margin: 0;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+        .ingredient-box-radio {
+            display: inline-block;
+            position: relative;
+            padding-left: 30px;
+            padding-right: 15px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 20px;
+                width: 20px; //                background-color: #eee;
+                border-radius: 50%;
+                border: 1px solid #e3ede7;
+            }
+
+            /* On mouse-over, add a grey background color */
+            &:hover input ~ .checkmark {}
+
+            /* When the radio button is checked, add a blue background */
+            input:checked ~ .checkmark {
+                background-color: #3f8257;
+            }
+
+            /* Create the indicator (the dot/circle - hidden when not checked) */
+            .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            /* Show the indicator (dot/circle) when checked */
+            input:checked ~ .checkmark:after {
+                display: block;
+            }
+
+            /* Style the indicator (dot/circle) */
+            .checkmark:after {
+                top: 5px;
+                left: 5px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: white;
+            }
+        }
+    }
+
+}
+
+[type=checkbox] {
+    display: none;
+}
+
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+[type=checkbox]:checked + .ingredient-box,
+[type=checkbox]:checked + .tags-box,
+[type=radio]:checked {
+    background-color: #e3ede7;
+    border-radius: 4px;
+}
+
+
+/************************   USER INFO   ************************/
+
+table {
+    margin: 0 auto;
+    td {
+        text-align: right;
+    }
+    td:nth-child(2n) {
+        text-align: left;
+        padding-left: 10px;
+    }
+
+}
+
+/************************   FOOTER   ************************/
+
+.footer {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2em 30px;
+    background: $footer-background;
+    background-image: url(../img/texture.png);
+    address {
+        a {
+            color: #fff;
+            font-size: 1.2em;
+            font-style: normal;
+            &:hover,
+            &:focus {
+                color: $active-red;
+            }
+        }
+        .tel {
+            margin-left: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .org {
+            font-weight: bold;
+            text-decoration: none;
+        }
+    }
+    small {
+        color: #fff;
+        font-weight: 0.8em;
+    }
+    .map:hover,
+    .map:focus {
+        color: $header-background;
+    }
+}
+
+/************************   ERROR   ************************/
+
+.error-text {
+    position: absolute;
+    top: -25px;
+    left: 10px;
+}
+#errorMsg {
+    color: #bc472c;
+    flex-basis: 100%;
+    padding: 20px;
+    background: #f5dcd8;
+    display: none;
+    position: relative;
+    p {
+        margin: 10px 0;
+    }
+}
+#buttonCancel {
+    position: absolute;
+    border: none;
+    background: transparent;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    color: #b9452a;
+}
+
+/************************   MEDIA   ************************/
+
+@media screen and (orientation: landscape) {
+    #signup-container {
+        height: 500px;
+    }
+}
+
+@media all and (max-width: 537px) {
+    .innerLogin {
+        display: none;
+    }
+    .header-top {
+        flex-direction: column;
+        position: relative;
+        height: 153px;
+        padding-left: 10px;
+        padding-right: 10px;
+        .login {
+            padding: 10px;
+            order: 2;
+            position: absolute;
+            right: 10px;
+        }
+        .logo {
+            order: 3;
+            width: 120px;
+            margin-left: -19px;
+            img {
+                width: 130%;
+            }
+        }
+        .btn .green-white {
+            margin: 0;
+        }
+    }
+    #login-container {
+        height: 300px;
+        .form .svgContainer {
+            width: 145px;
+            height: 145px;
+            margin-bottom: 50px;
+        }
+        #signup-container {
+            height: 500px;
+        }
+        .form {
+            padding: 10px;
+            transform: translate(-50%, -179px);
+        }
+    }
+    .clock {
+        margin-right: auto;
+        order: 1;
+        font-size: 1.2em;
+    }
+    .pizzas {
+        margin-bottom: 20px;
+    }
+    .footer {
+        padding: 1.7em 10px;
+        flex-direction: column;
+    }
+    a .button {
+        padding: .35em .8em;
+        height: 40px;
+    }
+    .footer address {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        .tel {
+            margin-left: auto;
+        }
+    }
+}
